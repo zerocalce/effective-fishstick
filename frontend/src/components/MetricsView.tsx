@@ -15,7 +15,15 @@ const data = [
   { epoch: 10, loss: 0.10, accuracy: 0.98, val_loss: 0.28, val_accuracy: 0.90 },
 ];
 
-const MetricCard = ({ title, value, icon: Icon, trend, color }: any) => (
+interface MetricCardProps {
+  title: string;
+  value: string | number;
+  icon: React.ElementType;
+  trend: string;
+  color: string;
+}
+
+const MetricCard: React.FC<MetricCardProps> = ({ title, value, icon: Icon, trend, color }) => (
   <div className="bg-slate-900 border border-slate-800 p-4 rounded-lg">
     <div className="flex items-center justify-between mb-2">
       <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">{title}</div>

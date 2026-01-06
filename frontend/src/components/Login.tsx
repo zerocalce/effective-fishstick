@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Lock, Loader2, Cpu, ShieldCheck, CheckCircle2, Copy, Info, AlertCircle } from 'lucide-react';
 import api from '../services/api';
 
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+}
+
 interface LoginProps {
-  onLogin: (user: any, token: string) => void;
+  onLogin: (user: User, token: string) => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
@@ -19,7 +26,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     console.log('[Analytics] Login page viewed');
   }, []);
 
-  const trackEvent = (eventName: string, data?: any) => {
+  const trackEvent = (eventName: string, data?: Record<string, unknown>) => {
     console.log(`[Analytics] Event: ${eventName}`, data);
   };
 
@@ -50,8 +57,18 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
       trackEvent('login_success', { userId: response.data.user.id });
       onLogin(response.data.user, response.data.accessToken);
-    } catch (err: any) {
-      const errorMsg = err.response?.data?.error || 'Failed to login. Please try again.';
+    } catch (err: unknown) {
+      let errorMsg = 'Failed to login. Please try again.';
+      
+      if (err && typeof err === 'object' && 'response' in err) {
+        const axiosError = err as { response?: { data?: { error?: string } } };
+        if (axiosError.response?.data?.error) {
+          errorMsg = axiosError.response.data.error;
+        }
+      } else if (err instanceof Error) {
+        errorMsg = err.message;
+      }
+      
       setError(errorMsg);
       trackEvent('login_failure', { error: errorMsg });
     } finally {

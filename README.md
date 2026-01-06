@@ -53,13 +53,20 @@ An enterprise-grade IDE for building and managing autonomous agent frameworks, d
 
 ## 🌐 Deployment
 
+### Backend (Render)
+The backend is ready for deployment on Render.
+1. Create a new **Blueprint** on Render.
+2. Connect this GitHub repository.
+3. Render will automatically detect the `render.yaml` file and set up the service.
+4. Once deployed, copy your service URL (e.g., `https://ai-studio-ide-backend.onrender.com`).
+
 ### Frontend (Netlify)
 The frontend is configured for easy deployment to Netlify. 
 1. Connect your GitHub repository to Netlify.
 2. Set the **Base directory** to `frontend`.
 3. Set the **Build command** to `npm run build`.
 4. Set the **Publish directory** to `frontend/dist`.
-5. Add the Environment Variable `VITE_API_URL` pointing to your deployed backend.
+5. The project uses a proxy for API calls. Update the `to` field in `netlify.toml` with your Render backend URL.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick)
 

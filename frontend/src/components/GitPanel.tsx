@@ -9,6 +9,11 @@ interface Commit {
   hash: string;
 }
 
+interface FileChange {
+  name: string;
+  status: string;
+}
+
 const GitPanel: React.FC = () => {
   const [branch] = useState('main');
   const [commitMessage, setCommitMessage] = useState('');
@@ -27,7 +32,7 @@ const GitPanel: React.FC = () => {
     { id: '3', message: 'Initial commit', author: 'AI Dev', date: 'Yesterday', hash: 'a1b2c3d' }
   ];
 
-  const handleStage = (file: any, isUnstaged: boolean) => {
+  const handleStage = (file: FileChange, isUnstaged: boolean) => {
     if (isUnstaged) {
       setUnstagedFiles(unstagedFiles.filter(f => f.name !== file.name));
       setStagedFiles([...stagedFiles, file]);
