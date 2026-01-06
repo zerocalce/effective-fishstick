@@ -27,8 +27,8 @@ An enterprise-grade IDE for building and managing autonomous agent frameworks, d
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/zerocalce/effective-fishstick.git
-   cd effective-fishstick
+   git clone https://github.com/zerocalce/effective-fishstick-8ab71.git
+   cd effective-fishstick-8ab71
    ```
 
 2. **Setup Backend**:
@@ -63,7 +63,7 @@ The frontend is ready for deployment to Netlify.
 2. To update the backend endpoint, simply modify the `to` field in `netlify.toml`.
 3. Once you deploy, Netlify will generate a **unique URL** for your site (e.g., `https://your-site-name.netlify.app/`).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick-8ab71)
 
 ## 📄 License
 
