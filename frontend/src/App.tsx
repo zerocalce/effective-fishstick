@@ -175,9 +175,18 @@ const App: React.FC = () => {
                 <p className="text-sm font-bold text-white">{user?.name}</p>
                 <p className="text-[10px] text-slate-500">{user?.email}</p>
               </div>
+              <a 
+                href="https://comfy-daifuku-80d504.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full flex items-center gap-2 p-3 text-sm text-slate-400 hover:bg-slate-800 transition-colors"
+              >
+                <UserIcon size={16} />
+                <span>View Portfolio</span>
+              </a>
               <button 
                 onClick={handleLogout}
-                className="w-full flex items-center gap-2 p-3 text-sm text-red-400 hover:bg-slate-800 transition-colors"
+                className="w-full flex items-center gap-2 p-3 text-sm text-red-400 hover:bg-slate-800 transition-colors border-t border-slate-800"
               >
                 <LogOut size={16} />
                 <span>Logout</span>

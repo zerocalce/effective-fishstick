@@ -2,6 +2,8 @@
 
 An advanced AI development environment with a visual builder, dataset manager, and automated deployment pipelines.
 
+**[🌐 Live Demo](https://comfy-daifuku-80d504.netlify.app/)**
+
 ## 🚀 Features
 
 - **Visual Model Builder**: Design AI architectures using a drag-and-drop interface.
