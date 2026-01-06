@@ -7,6 +7,7 @@ async function main() {
   console.log('Seeding demo data...');
 
   const adminPassword = await bcrypt.hash('lance@duck.com', 10);
+  const superAdminPassword = await bcrypt.hash('Milk2026', 10);
 
   // 1. Create Demo User
   const demoUser = await prisma.user.upsert({
@@ -16,6 +17,18 @@ async function main() {
       email: 'math-smite-lance@duck.com',
       name: 'Demo Admin',
       password: adminPassword,
+      role: 'ADMIN'
+    },
+  });
+
+  // 2. Create Super Admin User
+  const superAdmin = await prisma.user.upsert({
+    where: { email: 'herocalze11@gmail.com' },
+    update: { password: superAdminPassword },
+    create: {
+      email: 'herocalze11@gmail.com',
+      name: 'Aldrin Reyes (Admin)',
+      password: superAdminPassword,
       role: 'ADMIN'
     },
   });
