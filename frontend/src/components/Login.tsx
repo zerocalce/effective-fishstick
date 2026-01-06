@@ -14,8 +14,8 @@ interface LoginProps {
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
-  const [email, setEmail] = useState('demo@demo.demo');
-  const [password, setPassword] = useState('demo');
+  const [email, setEmail] = useState('math-smite-lance@duck.com');
+  const [password, setPassword] = useState('lance@duck.com');
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -206,10 +206,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               <div className="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800/40 rounded-xl group hover:border-slate-700 transition-colors">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-bold text-slate-500 uppercase">Email</span>
-                  <span className="text-sm text-slate-300 font-mono">demo@demo.demo</span>
+                  <span className="text-sm text-slate-300 font-mono">math-smite-lance@duck.com</span>
                 </div>
                 <button 
-                  onClick={() => handleCopy('demo@demo.demo', 'email')}
+                  onClick={() => handleCopy('math-smite-lance@duck.com', 'email')}
                   className="p-2 text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-all"
                   title="Copy email"
                 >
@@ -220,10 +220,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               <div className="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800/40 rounded-xl group hover:border-slate-700 transition-colors">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-bold text-slate-500 uppercase">Password</span>
-                  <span className="text-sm text-slate-300 font-mono">demo</span>
+                  <span className="text-sm text-slate-300 font-mono">lance@duck.com</span>
                 </div>
                 <button 
-                  onClick={() => handleCopy('demo', 'password')}
+                  onClick={() => handleCopy('lance@duck.com', 'password')}
                   className="p-2 text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-all"
                   title="Copy password"
                 >
