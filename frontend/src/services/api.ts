@@ -2,6 +2,13 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
+// Validation to prevent common configuration errors
+if (API_URL.includes('netlify.app') && !API_URL.includes('api')) {
+  console.warn(`[Cynomesh] Warning: API_URL (${API_URL}) looks like a static site URL. 
+  If you are trying to use the portfolio as a backend, ensure it has an /api endpoint.
+  Defaulting to local backend if requests fail.`);
+}
+
 const api = axios.create({
   baseURL: API_URL,
 });

@@ -1,16 +1,16 @@
-# AI Studio IDE - Effective Fishstick
+# Cynomesh AI Studio - Effective Fishstick
 
-An advanced AI development environment with a visual builder, dataset manager, and automated deployment pipelines.
+An enterprise-grade IDE for building and managing autonomous agent frameworks, distributed intelligence layers, and AI-driven infrastructure.
 
 **[🌐 Live Demo](https://comfy-daifuku-80d504.netlify.app/)**
 
 ## 🚀 Features
 
+- **Autonomous Agent Orchestration**: Design and manage distributed agent swarms.
+- **Distributed Intelligence**: Optimize LLM routing and latency across geo-distributed layers.
 - **Visual Model Builder**: Design AI architectures using a drag-and-drop interface.
-- **Dataset Management**: Upload, explore, and preprocess datasets for training.
-- **Automated Deployments**: Deploy models to various cloud platforms with one click.
-- **AI Assistant**: Built-in NLP assistant to help with code, debugging, and platform guidance.
-- **Sandbox Environment**: Execute code in secure, isolated runtimes.
+- **Automated Infrastructure Remediation**: Built-in SRE agents for automated fixes.
+- **Sandbox Environment**: Execute agent code in secure, isolated runtimes.
 
 ## 🛠️ Tech Stack
 

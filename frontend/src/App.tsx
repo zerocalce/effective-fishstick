@@ -26,7 +26,7 @@ import AIAssistant from './components/AIAssistant';
 import Login from './components/Login';
 import GitPanel from './components/GitPanel';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { LogOut, User as UserIcon, CloudCheck, Cloud, Bot } from 'lucide-react';
+import { LogOut, User as UserIcon, CloudCheck, Cloud, Bot, ExternalLink } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -164,6 +164,16 @@ const App: React.FC = () => {
             active={activeTab === 'tutorials'} 
             onClick={() => setActiveTab('tutorials')} 
           />
+          <div className="h-[1px] w-8 bg-slate-800 my-2" />
+          <a 
+            href="https://comfy-daifuku-80d504.netlify.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 text-slate-500 hover:text-blue-500 hover:bg-slate-800 transition-all rounded-xl"
+            title="Visit Aldrin's Portfolio"
+          >
+            <ExternalLink size={24} />
+          </a>
           <div className="flex-grow" />
           
           <div className="relative group">
@@ -201,7 +211,7 @@ const App: React.FC = () => {
           {/* Header */}
           <div className="h-12 bg-studio-sidebar border-b border-slate-700 flex items-center justify-between px-4">
             <div className="flex items-center space-x-4">
-              <span className="font-bold text-studio-accent tracking-tighter text-xl">AI STUDIO</span>
+              <span className="font-bold text-studio-accent tracking-tighter text-xl">CYNOMESH</span>
               <div className="h-4 w-[1px] bg-slate-700" />
               <div className="flex items-center space-x-2 text-sm text-slate-400">
                 <span>my-first-project</span>

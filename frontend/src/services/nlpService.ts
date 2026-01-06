@@ -53,10 +53,13 @@ export const processQuery = async (query: string, context: { activePanelId: stri
   // Intent Recognition
   if (lowerQuery.includes('hello') || lowerQuery.includes('hi')) {
     intent = INTENTS.GREETING;
-    response = "Hello! I'm your AI Studio assistant. How can I help you build your models today?";
+    response = "Hello! I'm your Cynomesh assistant. I'm specialized in distributed autonomous agent frameworks and SRE automation. How can I help you today?";
+  } else if (lowerQuery.includes('cynomesh') || lowerQuery.includes('aldrin') || lowerQuery.includes('who made this')) {
+    intent = INTENTS.HELP;
+    response = "Cynomesh AI Studio was developed by Aldrin Reyes, a Senior System Administrator specializing in autonomous systems. It bridges the gap between complex infrastructure and distributed intelligence.";
   } else if (lowerQuery.includes('help') || lowerQuery.includes('what can you do')) {
     intent = INTENTS.HELP;
-    response = "I can help you explain the current panel, guide you through deployments, debug your code, or suggest best practices for your AI models.";
+    response = "I can help you orchestrate agent swarms, explain the Cynomesh distributed layers, debug your agent code, or suggest security hardening for your infrastructure.";
   } else if (lowerQuery.includes('explain') || lowerQuery.includes('this panel')) {
     intent = INTENTS.EXPLAIN_PANEL;
     response = `You are currently in the ${context.activePanelId} view. This panel is used for ${context.activePanelId === 'editor' ? 'writing code' : 'managing project resources'}.`;

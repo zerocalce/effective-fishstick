@@ -73,8 +73,8 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <div className="inline-flex items-center justify-center p-4 bg-blue-600/10 rounded-3xl mb-6 border border-blue-500/20 shadow-inner">
             <Cpu className="text-blue-500" size={40} />
           </div>
-          <h1 className="text-4xl font-black text-white tracking-tighter mb-3">AI STUDIO</h1>
-          <p className="text-slate-400 font-medium">Next-gen AI Development Sandbox</p>
+          <h1 className="text-4xl font-black text-white tracking-tighter mb-3">CYNOMESH</h1>
+          <p className="text-slate-400 font-medium">Autonomous Agent IDE</p>
         </div>
 
         {/* Login Card */}
