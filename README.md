@@ -54,20 +54,15 @@ An enterprise-grade IDE for building and managing autonomous agent frameworks, d
 ## 🌐 Deployment
 
 ### Backend (Render)
-The backend is ready for deployment on Render.
-1. Create a new **Blueprint** on Render.
-2. Connect this GitHub repository.
-3. Render will automatically detect the `render.yaml` file and set up the service.
-4. Once deployed, copy your service URL (e.g., `https://ai-studio-ide-backend.onrender.com`).
-5. **Environment Variables**: The `STUDIO_API_KEY` (currently using `exs-d5e7kgfgi27c73981tmg`) is pre-configured in `render.yaml` to enable AI features.
+The backend is live on Render at **[https://ai-studio-ide-backend.onrender.com](https://ai-studio-ide-backend.onrender.com)**.
+1. It is configured via `render.yaml` for automated deployments.
+2. **Environment Variables**: The `STUDIO_API_KEY` (currently using `exs-d5e7kgfgi27c73981tmg`) is pre-configured to enable AI features.
+3. The database uses Prisma with SQLite for simplicity in this demo.
 
 ### Frontend (Netlify)
-The frontend is configured for easy deployment to Netlify. 
-1. Connect your GitHub repository to Netlify.
-2. Set the **Base directory** to `frontend`.
-3. Set the **Build command** to `npm run build`.
-4. Set the **Publish directory** to `frontend/dist`.
-5. The project uses a proxy for API calls. Update the `to` field in `netlify.toml` with your Render backend URL.
+The frontend is live at **[https://comfy-daifuku-80d504.netlify.app/](https://comfy-daifuku-80d504.netlify.app/)**.
+1. It uses `netlify.toml` to proxy `/api/*` requests to the Render backend.
+2. To update the backend endpoint, simply modify the `to` field in `netlify.toml`.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick)
 
