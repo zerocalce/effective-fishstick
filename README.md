@@ -2,8 +2,6 @@
 
 An enterprise-grade IDE for building and managing autonomous agent frameworks, distributed intelligence layers, and AI-driven infrastructure.
 
-**[🌐 Live Demo](https://comfy-daifuku-80d504.netlify.app/)**
-
 ## 🚀 Features
 
 - **Autonomous Agent Orchestration**: Design and manage distributed agent swarms.
@@ -60,9 +58,10 @@ The backend is live on Render at **[https://ai-studio-ide-backend.onrender.com](
 3. The database uses Prisma with SQLite for simplicity in this demo.
 
 ### Frontend (Netlify)
-The frontend is live at **[https://comfy-daifuku-80d504.netlify.app/](https://comfy-daifuku-80d504.netlify.app/)**.
+The frontend is ready for deployment to Netlify.
 1. It uses `netlify.toml` to proxy `/api/*` requests to the Render backend.
 2. To update the backend endpoint, simply modify the `to` field in `netlify.toml`.
+3. Once deployed, you will receive a unique Netlify URL (e.g., `https://ai-studio-ide.netlify.app/`).
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick)
 
