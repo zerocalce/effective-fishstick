@@ -49,6 +49,18 @@ An advanced AI development environment with a visual builder, dataset manager, a
 4. **Access the IDE**:
    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
+## 🌐 Deployment
+
+### Frontend (Netlify)
+The frontend is configured for easy deployment to Netlify. 
+1. Connect your GitHub repository to Netlify.
+2. Set the **Base directory** to `frontend`.
+3. Set the **Build command** to `npm run build`.
+4. Set the **Publish directory** to `frontend/dist`.
+5. Add the Environment Variable `VITE_API_URL` pointing to your deployed backend.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerocalce/effective-fishstick)
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

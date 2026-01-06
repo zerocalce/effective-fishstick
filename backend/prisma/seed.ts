@@ -1,27 +1,44 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('Seeding deployment data...');
+  console.log('Seeding demo data...');
 
-  // 1. Find or create a user
-  const user = await prisma.user.upsert({
-    where: { email: 'math-smite-lance@duck.com' },
-    update: {},
+  const hashedPassword = await bcrypt.hash('demo', 10);
+  const adminPassword = await bcrypt.hash('lance@duck.com', 10);
+
+  // 1. Create Demo User
+  const demoUser = await prisma.user.upsert({
+    where: { email: 'demo@demo.demo' },
+    update: { password: hashedPassword },
     create: {
-      email: 'math-smite-lance@duck.com',
-      name: 'Studio Admin',
-      password: 'lance@duck.com', // In a real app, this would be hashed
+      email: 'demo@demo.demo',
+      name: 'Demo User',
+      password: hashedPassword,
+      role: 'USER'
     },
   });
 
-  // 2. Create a project
+  // 2. Find or create an admin user
+  const adminUser = await prisma.user.upsert({
+    where: { email: 'math-smite-lance@duck.com' },
+    update: { password: adminPassword },
+    create: {
+      email: 'math-smite-lance@duck.com',
+      name: 'Studio Admin',
+      password: adminPassword,
+      role: 'ADMIN'
+    },
+  });
+
+  // 3. Create a project for demo user
   const project = await prisma.project.create({
     data: {
-      name: 'MNIST Classification',
-      description: 'Handwritten digit recognition model.',
-      userId: user.id,
+      name: 'Sentiment Analysis Demo',
+      description: 'A pre-built NLP model for demo purposes.',
+      userId: demoUser.id,
     },
   });
 
