@@ -47,7 +47,7 @@ An enterprise-grade IDE for building and managing autonomous agent frameworks, d
    ```
 
 4. **Access the IDE**:
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
+   Open **[http://localhost:5173](http://localhost:5173)** in your browser for local development.
 
 ## 🌐 Deployment
 
