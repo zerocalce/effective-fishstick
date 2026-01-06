@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GitBranch, GitCommit, GitPullRequest, GitMerge, Clock, Plus, Check, RotateCcw, ArrowUp, ArrowDown } from 'lucide-react';
+import { GitBranch, GitCommit, GitPullRequest, GitMerge, Clock, Plus, RotateCcw, ArrowUp, ArrowDown } from 'lucide-react';
 
 interface Commit {
   id: string;
@@ -10,7 +10,7 @@ interface Commit {
 }
 
 const GitPanel: React.FC = () => {
-  const [branch, setBranch] = useState('main');
+  const [branch] = useState('main');
   const [commitMessage, setCommitMessage] = useState('');
   const [stagedFiles, setStagedFiles] = useState([
     { name: 'model_training.py', status: 'modified' },

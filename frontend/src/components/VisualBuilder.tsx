@@ -54,7 +54,7 @@ const initialEdges: Edge[] = [
 ];
 
 const VisualBuilder: React.FC = () => {
-  const [nodes, setNodes] = useState<Node[]>(initialNodes);
+  const [nodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>(initialEdges);
 
   const onConnect = useCallback(

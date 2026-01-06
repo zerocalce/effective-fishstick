@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, FileText, Download, Upload, Trash2, Search, Filter } from 'lucide-react';
+import { FileText, Download, Upload, Trash2, Search, Filter } from 'lucide-react';
 
 const datasets = [
   { id: '1', name: 'mnist_train.csv', size: '12.4 MB', format: 'CSV', samples: 60000, lastUsed: '2 hours ago' },
